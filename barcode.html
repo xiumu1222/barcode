@@ -18,8 +18,10 @@
       $("#item_box").append('<svg id="barcode' + i + '" class="bar-item"></svg>');
       JsBarcode("#barcode" + i, "01234567891" + i, {
         text: "01234567891 " + i,
-        width: 1.2,
-        height: 38
+        width: 2.4,
+        height: 76,
+        marginBottom:20,
+        marginTop:20
       });
     }
   </script>
@@ -30,8 +32,9 @@
     width: 32mm;
     background: red;
     margin-left: 15px; */
-    width: 50mm;
+    width: 100mm;
     /* height: 22.7mm; */
+    background: #fff;
     margin: 0 auto;
   }
 
