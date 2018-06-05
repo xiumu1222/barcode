@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html>
- <head> 
-  <meta charset="utf-8" /> 
-  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" /> 
-  <title></title> 
-  <script type="text/javascript" src="./jquery.min.js"></script> 
-  <script type="text/javascript" src="./JsBarcode.all.min.js"></script> 
- </head> 
- <body> 
-  <svg id="svgcode"></svg> 
-  <!-- or --> 
-  <canvas id="canvascode"></canvas> 
-  <!-- or --> 
-  <img id="imgcode" /> 
-  <script>  
-        $("#svgcode").JsBarcode('Hi!');//or JsBarcode("#svgcode", "Hi!");  
 
-        $("#canvascode").JsBarcode('Hello world!');//or JsBarcode("#canvascode", "Hello world!");  
-  
-        $("#imgcode").JsBarcode("I'm huangenai!");//or JsBarcode("#imgcode", "I'm huangenai!");  
-  </script> 
- </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+  <title></title>
+  <script type="text/javascript" src="./jquery.min.js"></script>
+  <script type="text/javascript" src="./JsBarcode.all.min.js"></script>
+</head>
+
+<body style="background: #e9e9e9">
+  <div id="item_box" class="bar-box">
+
+  </div>
+  <script>
+    for (var i = 0; i < 10; i++) {
+      $("#item_box").append('<svg id="barcode' + i + '" class="bar-item"></svg>');
+      JsBarcode("#barcode" + i, "01234567891" + i, {
+        text: "01234567891 " + i,
+        width: 1.2,
+        height: 38
+      });
+    }
+  </script>
+</body>
+<style>
+  .bar-box {
+    /* height: 10mm;
+    width: 32mm;
+    background: red;
+    margin-left: 15px; */
+    width: 50mm;
+    /* height: 22.7mm; */
+    margin: 0 auto;
+  }
+
+  .bar-item {
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+
 </html>
